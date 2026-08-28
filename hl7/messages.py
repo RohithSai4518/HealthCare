@@ -30,7 +30,7 @@ class HL7MessageFactory:
         now = cls._timestamp_hl7()
         ctrl_id = f"MSG-{int(time.time()*1000)}"
 
-        msh = HL7Segment(f"MSH|^~\&|HEALTHSPHERE|{sending_facility}|RECEIVING_SYSTEM|CLINICAL_HIS|{now}||ADT^A01^ADT_A01|{ctrl_id}|P|2.5")
+        msh = HL7Segment(fr"MSH|^~\&|HEALTHSPHERE|{sending_facility}|RECEIVING_SYSTEM|CLINICAL_HIS|{now}||ADT^A01^ADT_A01|{ctrl_id}|P|2.5")
         
         # PID: Patient ID, MRN, Name, DOB, Gender, Address, Phone
         first = patient.first_name
@@ -59,7 +59,7 @@ class HL7MessageFactory:
         now = cls._timestamp_hl7()
         ctrl_id = f"MSG-ORU-{int(time.time()*1000)}"
 
-        msh = HL7Segment(f"MSH|^~\&|HEALTHSPHERE_LIS|{sending_facility}|EMR_INBOX|MAIN_CLINIC|{now}||ORU^R01^ORU_R01|{ctrl_id}|P|2.5")
+        msh = HL7Segment(fr"MSH|^~\&|HEALTHSPHERE_LIS|{sending_facility}|EMR_INBOX|MAIN_CLINIC|{now}||ORU^R01^ORU_R01|{ctrl_id}|P|2.5")
         
         dob_clean = patient.date_of_birth.replace("-", "")
         gender_code = "M" if patient.gender.value == "MALE" else ("F" if patient.gender.value == "FEMALE" else "U")
