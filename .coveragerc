@@ -1,0 +1,14 @@
+[run]
+source = core,domain,services,repositories,cdss,clinical_guidelines,hl7,edi_x12,telemetry,inpatient,knowledge_base
+omit =
+    tests/*
+    */__pycache__/*
+    setup.py
+
+[report]
+show_missing = True
+exclude_lines =
+    pragma: no cover
+    def __repr__
+    raise NotImplementedError
+    if __name__ == .__main__.:
