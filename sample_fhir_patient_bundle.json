@@ -1,0 +1,134 @@
+{
+  "resourceType": "Bundle",
+  "type": "collection",
+  "total": 3,
+  "entry": [
+    {
+      "resource": {
+        "resourceType": "Patient",
+        "id": "4ad3dd7f-9829-401e-a7e3-ca378edea75d",
+        "identifier": [
+          {
+            "use": "official",
+            "type": {
+              "coding": [
+                {
+                  "system": "http://terminology.hl7.org/CodeSystem/v2-0203",
+                  "code": "MR",
+                  "display": "Medical Record Number"
+                }
+              ]
+            },
+            "system": "urn:oid:healthsphere:patient:mrn",
+            "value": "MRN-3935-00001"
+          }
+        ],
+        "active": true,
+        "name": [
+          {
+            "use": "official",
+            "family": "Lopez",
+            "given": [
+              "Thomas"
+            ]
+          }
+        ],
+        "gender": "male",
+        "birthDate": "1988-04-27",
+        "telecom": [
+          {
+            "system": "phone",
+            "value": "555-221-6197",
+            "use": "mobile"
+          },
+          {
+            "system": "email",
+            "value": "dummy_thomas.lopez27@synthetic-health.org"
+          }
+        ],
+        "address": [
+          {
+            "use": "home",
+            "line": [
+              "6278 Oakridge Ave"
+            ],
+            "city": "Central City",
+            "state": "MA",
+            "postalCode": "38371",
+            "country": "US"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Encounter",
+        "id": "11ccae7e-80cf-40d7-b0cf-952e58c7dfa5",
+        "status": "finished",
+        "class": {
+          "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+          "code": "AMB",
+          "display": "ambulatory"
+        },
+        "subject": {
+          "reference": "Patient/4ad3dd7f-9829-401e-a7e3-ca378edea75d"
+        },
+        "participant": [
+          {
+            "individual": {
+              "reference": "Practitioner/2a1e8e83-0bfa-48cd-bc3c-21183e053a58"
+            }
+          }
+        ],
+        "period": {
+          "start": "2026-08-28T05:12:15.864837+00:00",
+          "end": "2026-08-28T05:12:15.864837+00:00"
+        },
+        "reasonCode": [
+          {
+            "text": "Patient reports symptoms consistent with unspecified asthma, uncomplicated."
+          }
+        ],
+        "diagnosis": [
+          {
+            "condition": {
+              "display": "J45.909 - Unspecified asthma, uncomplicated"
+            },
+            "use": {
+              "coding": [
+                {
+                  "system": "http://terminology.hl7.org/CodeSystem/diagnosis-role",
+                  "code": "AD",
+                  "display": "Admission diagnosis"
+                }
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "DiagnosticReport",
+        "id": "a4e114b8-ced4-4196-b92e-0af3d7836212",
+        "status": "final",
+        "subject": {
+          "reference": "Patient/4ad3dd7f-9829-401e-a7e3-ca378edea75d"
+        },
+        "effectiveDateTime": "2026-08-28T05:12:15.864837+00:00",
+        "conclusion": "Lab assays processed.",
+        "result": [
+          {
+            "parameter": "Serum Creatinine",
+            "valueQuantity": {
+              "value": 1.0,
+              "unit": "mg/dL"
+            },
+            "interpretation": "NORMAL",
+            "referenceRange": "0.7 - 1.3 mg/dL"
+          }
+        ]
+      }
+    }
+  ]
+}
